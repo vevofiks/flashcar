@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-md shadow-lg"
+          ? "bg-white/20 backdrop-blur-md shadow-lg"
           : "bg-transparent backdrop-blur-sm"
       }`}
     >
@@ -101,7 +101,7 @@ const Navbar = () => {
             <div
               className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t transition-all ${
                 isScrolled
-                  ? "bg-white/90 backdrop-blur-md"
+                  ? "bg-white/20 backdrop-blur-md"
                   : "bg-black/50 backdrop-blur-md"
               }`}
             >

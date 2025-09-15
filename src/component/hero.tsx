@@ -81,16 +81,13 @@ const Hero = () => {
     useEffect(() => {
         setIsVisible(true);
 
-        // Animated counter for years of experience
+        let count = 0;
         const statInterval = setInterval(() => {
-            setCurrentStat(prev => {
-                if (prev < 30) return prev + 1;
-                clearInterval(statInterval);
-                return 30;
-            });
+            count++;
+            setCurrentStat(count);
+            if (count >= 30) clearInterval(statInterval);
         }, 50);
 
-        // Cycling through services
         const serviceInterval = setInterval(() => {
             setCurrentService(prev => (prev + 1) % services.length);
         }, 2500);
@@ -100,6 +97,7 @@ const Hero = () => {
             clearInterval(serviceInterval);
         };
     }, [services.length]);
+
 
     return (
         <section id="home" className="pt-16 bg-gradient-to-br from-slate-900 via-gray-900 to-amber-900 text-white relative overflow-hidden min-h-screen">

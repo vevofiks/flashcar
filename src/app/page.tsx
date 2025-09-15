@@ -1,12 +1,13 @@
 "use client";
 
 import About from "@/component/about";
+import Contact from "@/component/contact";
 import Features from "@/component/features";
 import Footer from "@/component/footer";
 import Hero from "@/component/hero";
+import InstagramSwiper from "@/component/instagramSwiper";
 import Navbar from "@/component/navbar";
 import Services from "@/component/services";
-import { Contact } from "lucide-react";
 
 
 
@@ -15,8 +16,9 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <Features />
       <Services />
+      <Features />
+      <InstagramSwiper />
       <About />
       <Contact />
       <Footer />
