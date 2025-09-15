@@ -3,8 +3,8 @@
 
 import { useState } from 'react';
 import { Box, CssBaseline, Typography } from '@mui/material';
-import AdminTopbar from '@/app/components/adminTopbar';
-import AdminSidebar from '@/app/components/adminSidebar';
+import AdminTopbar from '@/components/adminTopbar';
+import AdminSidebar from '@/components/adminSidebar';
 
 
 export default function DashboardPage() {

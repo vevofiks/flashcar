@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import { Box, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+import AdminTopbar from '@/components/adminTopbar';
+import AdminSidebar from '@/components/adminSidebar';
 import theme from '@/app/theme';
-import AdminTopbar from '@/app/components/adminTopbar';
-import AdminSidebar from '@/app/components/adminSidebar';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);

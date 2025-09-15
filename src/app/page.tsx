@@ -1,20 +1,18 @@
 "use client";
 
-import About from "@/component/about";
-import Contact from "@/component/contact";
-import Features from "@/component/features";
-import Footer from "@/component/footer";
-import Hero from "@/component/hero";
-import InstagramSwiper from "@/component/instagramSwiper";
-import Navbar from "@/component/navbar";
-import Services from "@/component/services";
+import About from "@/components/about";
+import Contact from "@/components/contact";
+import Features from "@/components/features";
+import Footer from "@/components/footer";
+import Hero from "@/components/hero";
+import InstagramSwiper from "@/components/instagramSwiper";
+import Services from "@/components/services";
 
 
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
       <Hero />
       <Services />
       <Features />
