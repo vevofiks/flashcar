@@ -2,14 +2,15 @@ import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-type Params = { id: string };
-
-export async function PUT(req: NextRequest, context: { params: Params }) {
+export async function PUT(
+    req: NextRequest,
+    { params }: { params: Promise<{ id: string }> }
+) {
     try {
         const client = await clientPromise;
         const db = client.db("flashcar");
 
-        const { id } = context.params;
+        const id = (await params).id;
         const body = await req.json();
 
         if (!body.name || typeof body.name !== "string") {
@@ -34,6 +35,7 @@ export async function PUT(req: NextRequest, context: { params: Params }) {
             );
         }
 
+        // Wrap inside { data: ... } for frontend compatibility
         return NextResponse.json({ data: updated });
     } catch (error) {
         console.error("Error updating category:", error);
@@ -44,12 +46,15 @@ export async function PUT(req: NextRequest, context: { params: Params }) {
     }
 }
 
-export async function DELETE(req: NextRequest, context: { params: Params }) {
+export async function DELETE(
+    req: NextRequest,
+    { params }: { params: Promise<{ id: string }> }
+) {
     try {
         const client = await clientPromise;
         const db = client.db("flashcar");
 
-        const { id } = context.params;
+        const id = (await params).id;
 
         const deleted = await db
             .collection("categories")
