@@ -4,12 +4,15 @@ import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(
+    req: NextRequest,
+    context: { params: any } // 👈 use any here
+) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
     const body = await req.json();
-    const { id } = params;
+    const { id } = context.params;
 
     if (!body.name || typeof body.name !== "string") {
         return NextResponse.json(
@@ -36,15 +39,18 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     return NextResponse.json({ data: updated });
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(
+    req: NextRequest,
+    context: { params: any } // 👈 same here
+) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
-    const { id } = params;
+    const { id } = context.params;
 
-    const deleted = await db
-        .collection("categories")
-        .deleteOne({ _id: new ObjectId(id) });
+    const deleted = await db.collection("categories").deleteOne({
+        _id: new ObjectId(id),
+    });
 
     if (deleted.deletedCount === 0) {
         return NextResponse.json(
