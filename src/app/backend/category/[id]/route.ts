@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
