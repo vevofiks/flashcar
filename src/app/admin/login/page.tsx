@@ -54,7 +54,7 @@ export default function Login() {
                 <div className="bg-gray-900/50 p-6 text-center border-b border-gray-700">
                     <div className="flex justify-center mb-4">
                         <Image
-                            src="/assets/logo2.png"
+                            src="/assets/flashcar.png"
                             alt="Company Logo"
                             width={120}
                             height={60}
@@ -62,7 +62,7 @@ export default function Login() {
                         />
                     </div>
                     <h2 className="text-2xl font-bold text-white">
-                        Harfa Trading WLL
+                        Flash Car
                     </h2>
                     <p className="text-gray-400 mt-1 text-sm">
                         Sign in to your dashboard
