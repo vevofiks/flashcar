@@ -97,7 +97,7 @@ const ProductsListing = () => {
                                     </p>
 
                                     <div className="flex items-center gap-1 mb-4">
-                                        {product.category.name}
+                                        {product.category?.name || "N/A"}
                                     </div>
                                 </div>
                             </div>
