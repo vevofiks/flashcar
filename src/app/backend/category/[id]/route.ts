@@ -2,13 +2,12 @@ import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function PUT(req: NextRequest, context: any) {
+export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
     const body = await req.json();
-    const { id } = context.params; // runtime is always an object
+    const { id } = params;
 
     if (!body.name || typeof body.name !== "string") {
         return NextResponse.json(
@@ -35,12 +34,11 @@ export async function PUT(req: NextRequest, context: any) {
     return NextResponse.json({ data: updated });
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function DELETE(req: NextRequest, context: any) {
+export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
-    const { id } = context.params;
+    const { id } = params;
 
     const deleted = await db
         .collection("categories")
