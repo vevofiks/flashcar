@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     {/* Logo Section */}
-                    <div className="flex items-center">
+                    <Link href={"/"} className="flex items-center">
                         <Image
                             src="/assets/flashcar.png"
                             alt="Flash Car Logo"
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 Riyadh Sky
                             </div>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
