@@ -2,6 +2,15 @@ import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
+
+interface IProduct {
+    name: string;
+    description: string;
+    category: string;
+    updatedAt: Date;
+    image?: string;
+}
+
 export async function PATCH(
     req: Request,
     { params }: { params: { id: string } }
@@ -81,7 +90,7 @@ export async function PUT(
         }
 
         // Build update object
-        const updateFields: any = {
+        const updateFields: IProduct = {
             name,
             description,
             category,

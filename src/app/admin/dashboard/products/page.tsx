@@ -113,8 +113,9 @@ export default function ProductsPage() {
             setProducts([...products, newProduct.data]);
             toast.success("Product added successfully");
             setModalOpen(false);
-        } catch (error: any) {
-            toast.error(error.message || "Error adding product");
+        } catch (error) {
+            console.log(error)
+            toast.error("Error adding product");
         }
     };
 
@@ -164,8 +165,9 @@ export default function ProductsPage() {
             toast.success("Product updated successfully");
             setEditProduct(null);
             setModalOpen(false);
-        } catch (error: any) {
-            toast.error(error.message || "Error updating product");
+        } catch (error) {
+            console.log(error)
+            toast.error("Error updating product");
         }
     };
 
@@ -196,8 +198,9 @@ export default function ProductsPage() {
             toast.success(
                 `Product ${!isBlocked ? "blocked" : "unblocked"} successfully`
             );
-        } catch (error: any) {
-            toast.error(error.message || "Error toggling product status");
+        } catch (error) {
+            console.log(error)
+            toast.error("Error toggling product status");
         }
     };
 
@@ -220,8 +223,9 @@ export default function ProductsPage() {
 
             setProducts(products.filter((p) => p._id !== id));
             toast.success("Product deleted successfully");
-        } catch (error: any) {
-            toast.error(error.message || "Error deleting product");
+        } catch (error) {
+            console.log(error)
+            toast.error("Error deleting product");
         }
     };
 

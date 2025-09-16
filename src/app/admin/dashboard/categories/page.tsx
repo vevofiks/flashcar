@@ -362,7 +362,7 @@ const CategoriesPage = () => {
                             No Categories Found
                         </Typography>
                         <Typography color="text.secondary" mb={3}>
-                            You haven't created any categories yet. Start by
+                            You haven&apos;t created any categories yet. Start by
                             adding your first category.
                         </Typography>
                         <Button
