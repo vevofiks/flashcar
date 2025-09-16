@@ -4,7 +4,7 @@ import { ObjectId } from "mongodb";
 
 type Params = { id: string };
 
-// @ts-expect-error – Next.js typing bug: params is not a Promise at runtime
+// @ts-ignore – Next.js typing bug
 export async function PUT(req: NextRequest, { params }: { params: Params }) {
     const client = await clientPromise;
     const db = client.db("flashcar");
@@ -36,7 +36,7 @@ export async function PUT(req: NextRequest, { params }: { params: Params }) {
     return NextResponse.json({ data: updated });
 }
 
-// @ts-expect-error – Next.js typing bug
+// @ts-ignore – Next.js typing bug
 export async function DELETE(req: NextRequest, { params }: { params: Params }) {
     const client = await clientPromise;
     const db = client.db("flashcar");
