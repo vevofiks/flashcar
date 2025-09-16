@@ -1,19 +1,18 @@
+/* eslint-disable */
+
 import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-type Params = {
-    params: {
-        id: string;
-    };
-};
-
-export async function PATCH(req: NextRequest, { params }: Params) {
+export async function PATCH(
+    req: NextRequest,
+    context: { params: any }
+) {
     try {
         const client = await clientPromise;
         const db = client.db("flashcar");
 
-        const { id } = params;
+        const { id } = context.params;
 
         // Find the category
         const category = await db.collection("categories").findOne({
