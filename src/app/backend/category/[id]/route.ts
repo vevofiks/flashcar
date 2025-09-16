@@ -2,12 +2,13 @@ import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-
-export async function PUT(req: NextRequest, { params }: { params: Record<string, string> }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function PUT(req: NextRequest, context: any) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
     const body = await req.json();
+    const { id } = context.params; // runtime is always an object
 
     if (!body.name || typeof body.name !== "string") {
         return NextResponse.json(
@@ -19,7 +20,7 @@ export async function PUT(req: NextRequest, { params }: { params: Record<string,
     const updated = await db
         .collection("categories")
         .findOneAndUpdate(
-            { _id: new ObjectId(params.id) },
+            { _id: new ObjectId(id) },
             { $set: { name: body.name } },
             { returnDocument: "after" }
         );
@@ -34,13 +35,16 @@ export async function PUT(req: NextRequest, { params }: { params: Record<string,
     return NextResponse.json({ data: updated });
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: Record<string, string> }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function DELETE(req: NextRequest, context: any) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
+    const { id } = context.params;
+
     const deleted = await db
         .collection("categories")
-        .deleteOne({ _id: new ObjectId(params.id) });
+        .deleteOne({ _id: new ObjectId(id) });
 
     if (deleted.deletedCount === 0) {
         return NextResponse.json(
