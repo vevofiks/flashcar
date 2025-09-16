@@ -1,9 +1,9 @@
 import clientPromise from "@/lib/mongodb";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { ObjectId } from "mongodb";
 
 export async function PUT(
-    req: Request,
+    req: NextRequest,
     { params }: { params: { id: string } }
 ) {
     try {
@@ -47,7 +47,7 @@ export async function PUT(
 }
 
 export async function DELETE(
-    req: Request,
+    req: NextRequest,
     { params }: { params: { id: string } }
 ) {
     try {
