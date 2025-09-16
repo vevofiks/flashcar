@@ -4,7 +4,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const fetchCategories = async (token: string) => {
   try {
-    const res = await fetch(`${apiUrl}/backend/category`, {
+    const res = await fetch(`${apiUrl}/api/category`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

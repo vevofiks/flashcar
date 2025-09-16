@@ -11,11 +11,11 @@ export const fetchData = async (
         const token = localStorage.getItem("adminToken") || "";
 
         const [productsResponse, categoriesResponse] = await Promise.all([
-            fetch(`${apiUrl}/backend/product`, {
+            fetch(`${apiUrl}/api/product`, {
                 method: "POST",
                 headers: { Authorization: `Bearer ${token}` },
             }),
-            fetch(`${apiUrl}/backend/category`, {
+            fetch(`${apiUrl}/api/category`, {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             }),
@@ -45,7 +45,7 @@ export const fetchProducts = async (
     try {
         const token = localStorage.getItem("adminToken") || "";
 
-        const productsResponse = await fetch(`${apiUrl}/backend/product`, {
+        const productsResponse = await fetch(`${apiUrl}/api/product`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -91,7 +91,7 @@ export async function newArrivals(): Promise<Product[]> {
 export async function getProductDetails(productId: string): Promise<Product> {
     console.log("Fetching product details for ID:", productId);
 
-    const response = await fetch(`${apiUrl}/admin/product/${productId}`);
+    const response = await fetch(`${apiUrl}/api/product/${productId}`);
 
     if (!response.ok) {
         throw new Error(

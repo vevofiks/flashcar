@@ -96,7 +96,7 @@ export default function ProductsPage() {
                 formData.append("image", data.image);
             }
 
-            const res = await fetch(`${apiUrl}/backend/product/add`, {
+            const res = await fetch(`${apiUrl}/api/product/add`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -142,7 +142,7 @@ export default function ProductsPage() {
                 formData.append("image", data.image);
             }
 
-            const res = await fetch(`${apiUrl}/backend/product/${id}`, {
+            const res = await fetch(`${apiUrl}/api/product/${id}`, {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -174,7 +174,7 @@ export default function ProductsPage() {
     const toggleProductBlock = async (id: string, isBlocked: boolean) => {
         try {
             const token = localStorage.getItem("adminToken") || "";
-            const res = await fetch(`${apiUrl}/backend/product/${id}`, {
+            const res = await fetch(`${apiUrl}/api/product/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -207,7 +207,7 @@ export default function ProductsPage() {
     const deleteProduct = async (id: string) => {
         try {
             const token = localStorage.getItem("adminToken") || "";
-            const res = await fetch(`${apiUrl}/backend/product/${id}`, {
+            const res = await fetch(`${apiUrl}/api/product/${id}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${token}`,

@@ -49,7 +49,7 @@ const CategoriesPage = () => {
 
     const fetchData = async () => {
         const token = localStorage.getItem("adminToken") || "";
-        const res = await fetch(`${apiUrl}/backend/category`, {
+        const res = await fetch(`${apiUrl}/api/category`, {
             method: "GET", // use GET since backend expects GET
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -88,7 +88,7 @@ const CategoriesPage = () => {
 
     const addCategory = async (data: { name: string }) => {
         try {
-            const res = await fetch(`${apiUrl}/backend/category/add`, {
+            const res = await fetch(`${apiUrl}/api/category/add`, {
                 method: "POST",
                 headers,
                 body: JSON.stringify(data),
@@ -103,7 +103,7 @@ const CategoriesPage = () => {
 
     const updateCategory = async (id: string, data: { name: string }) => {
         try {
-            const res = await fetch(`${apiUrl}/backend/category/${id}`, {
+            const res = await fetch(`${apiUrl}/api/category/${id}`, {
                 method: "PUT",
                 headers,
                 body: JSON.stringify(data),
@@ -119,7 +119,7 @@ const CategoriesPage = () => {
     };
 
     const toggleCategoryBlock = async (id: string) => {
-        const res = await fetch(`${apiUrl}/backend/category/block/${id}`, {
+        const res = await fetch(`${apiUrl}/api/category/block/${id}`, {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ const CategoriesPage = () => {
 
     const deleteCategory = async (id: string) => {
         try {
-            const res = await fetch(`${apiUrl}/backend/category/${id}`, {
+            const res = await fetch(`${apiUrl}/api/category/${id}`, {
                 method: "DELETE",
                 headers: { Authorization: headers.Authorization },
             });
