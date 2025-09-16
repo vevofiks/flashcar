@@ -2,10 +2,8 @@ import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
-type Params = { id: string };
 
-// @ts-ignore – Next.js typing bug
-export async function PUT(req: NextRequest, { params }: { params: Params }) {
+export async function PUT(req: NextRequest, { params }: { params: Record<string, string> }) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
@@ -36,8 +34,7 @@ export async function PUT(req: NextRequest, { params }: { params: Params }) {
     return NextResponse.json({ data: updated });
 }
 
-// @ts-ignore – Next.js typing bug
-export async function DELETE(req: NextRequest, { params }: { params: Params }) {
+export async function DELETE(req: NextRequest, { params }: { params: Record<string, string> }) {
     const client = await clientPromise;
     const db = client.db("flashcar");
 
