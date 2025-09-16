@@ -11,13 +11,13 @@ if (!uri) {
 }
 
 if (process.env.NODE_ENV === "development") {
-    // @ts-expect-error
+    // @ts-expect-error this may
     if (!global._mongoClientPromise) {
         client = new MongoClient(uri, options);
-        // @ts-expect-error
+        // @ts-expect-error this may
         global._mongoClientPromise = client.connect();
     }
-    // @ts-expect-error
+    // @ts-expect-error this may
     clientPromise = global._mongoClientPromise;
 } else {
     client = new MongoClient(uri, options);
