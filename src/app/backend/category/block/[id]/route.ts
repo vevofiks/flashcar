@@ -1,9 +1,9 @@
 import clientPromise from "@/lib/mongodb";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
 export async function PATCH(
-    req: Request,
+    req: NextRequest,
     { params }: { params: { id: string } }
 ) {
     try {
