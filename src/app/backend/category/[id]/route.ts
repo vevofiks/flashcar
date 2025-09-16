@@ -1,5 +1,5 @@
 import clientPromise from "@/lib/mongodb";
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
 export async function PUT(
@@ -35,7 +35,6 @@ export async function PUT(
             );
         }
 
-        // Wrap inside { data: ... } for frontend compatibility
         return NextResponse.json({ data: updated });
     } catch (error) {
         console.error("Error updating category:", error);
