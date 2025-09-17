@@ -42,6 +42,18 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
         }
     }, [page]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsMenuOpen(false);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
         <>
             <nav
@@ -162,6 +174,7 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
                         >
                             {links.map((item) => (
                                 <Link
+                                    onClick={() => setIsMenuOpen(false)}
                                     key={item.name}
                                     href={item.href}
                                     className="block px-3 py-2 text-white text-center hover:text-amber-500"
