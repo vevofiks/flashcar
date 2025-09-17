@@ -33,6 +33,7 @@ export default function Login() {
             //     alert(data.message || "Login failed");
             // }
         } catch (err) {
+            console.log(err)
             alert("Connection error. Please try again.");
         }
     };

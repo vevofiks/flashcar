@@ -31,6 +31,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import ProductForm from "@/components/productForm";
 import { fetchData } from "@/services/productService";
+import Image from "next/image";
 
 export interface Product {
     _id: string;
@@ -291,9 +292,11 @@ export default function ProductsPage() {
                                             alignItems: "center",
                                         }}
                                     >
-                                        <img
+                                        <Image
                                             src={product.image}
                                             alt={product.name}
+                                            width={100}
+                                            height={100}
                                             style={{
                                                 width: 80,
                                                 height: 80,
@@ -380,7 +383,7 @@ export default function ProductsPage() {
                                 filteredProducts.map((product) => (
                                     <TableRow key={product._id}>
                                         <TableCell>
-                                            <img
+                                            <Image
                                                 src={
                                                     product.image ||
                                                     "https://via.placeholder.com/50"

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchProducts } from "@/services/productService";
 import { Product } from "@/interfces/productInterface";
+import Image from "next/image";
 
 const ProductsListing = () => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -67,9 +68,11 @@ const ProductsListing = () => {
                                 onMouseLeave={() => setHoveredCard(null)}
                             >
                                 <div className="relative overflow-hidden h-48">
-                                    <img
+                                    <Image
                                         src={product.image}
                                         alt={product.name}
+                                        width={100}
+                                        height={100}
                                         className={`w-full h-full object-cover transition-transform duration-500 ${
                                             hoveredCard === product._id
                                                 ? "scale-110"
