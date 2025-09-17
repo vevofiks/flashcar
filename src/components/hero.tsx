@@ -8,12 +8,18 @@ import {
     Sparkles,
 } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
 
-const Hero = () => {
+interface IHero {
+    isIntersecting: boolean;
+    setIsIntersecting: Dispatch<SetStateAction<boolean>>;
+}
+
+const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
     const [isVisible, setIsVisible] = useState(false);
     const [currentStat, setCurrentStat] = useState(0);
     const [currentService, setCurrentService] = useState(0);
+    const homeRef = useRef<HTMLDivElement>(null);
 
     const services = [
         { text: "Premium Detailing", color: "text-blue-400" },
@@ -127,9 +133,30 @@ const Hero = () => {
         };
     }, [services.length]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsIntersecting(() => !entry.isIntersecting);
+            },
+            { threshold: 0 }
+        );
+
+        const currentRef = homeRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [isIntersecting]);
+
     return (
         <section
             id="home"
+            ref={homeRef}
             className="pt-16 bg-gradient-to-br from-slate-900 via-gray-900 to-amber-900 text-white relative overflow-hidden min-h-screen"
         >
             {/* Enhanced Background Elements */}
@@ -328,11 +355,11 @@ const Hero = () => {
                                             : "translate-y-4 opacity-0"
                                     }`}
                                 >
-                                    <div className="w-[18em] h-[16em] flex items-center">
+                                    <div className="w-[18em] h-[18em] flex items-center">
                                         {car_show.map((car, index) => (
                                             <div
                                                 key={index}
-                                                className={`absolute w-full h-full transition-all duration-500 ${
+                                                className={`absolute w-full h-auto transition-all duration-500 ${
                                                     currentService === index
                                                         ? "opacity-100 scale-100 translate-y-0"
                                                         : "opacity-0 scale-75 translate-y-8"
@@ -340,7 +367,7 @@ const Hero = () => {
                                             >
                                                 {/* content */}
                                                 <Image
-                                                    className="w-full h-full object-cover object-center"
+                                                    className={"w-full h-full"}
                                                     src={car.src}
                                                     width={100}
                                                     height={100}

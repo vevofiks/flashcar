@@ -1,23 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const butRef = useRef<HTMLButtonElement>(null);
     const page = usePathname();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const links = [
         { name: "Home", href: "/#home" },
@@ -27,12 +18,24 @@ const Navbar = () => {
         { name: "Contact", href: "/contact" },
     ];
 
+    useEffect(() => {
+        const handleButtonClose = () => {
+            setIsMenuOpen(false);
+        };
+
+        butRef.current?.addEventListener("focusout", handleButtonClose);
+
+        return () => {
+            butRef.current?.removeEventListener("focusout", handleButtonClose);
+        };
+    }, []);
+
     return (
         <nav
             className={`fixed w-full z-50 transition-all duration-500 ${
                 page.endsWith("products")
                     ? "bg-gray-800"
-                    : isScrolled
+                    : isIntersecting
                     ? "bg-white/20 backdrop-blur-md shadow-lg"
                     : "bg-transparent backdrop-blur-sm"
             }`}
@@ -53,7 +56,7 @@ const Navbar = () => {
                                 className={`font-bold text-2xl transition-colors ${
                                     page.endsWith("products")
                                         ? "text-white"
-                                        : isScrolled
+                                        : isIntersecting
                                         ? "text-gray-900"
                                         : "text-white"
                                 }`}
@@ -64,7 +67,7 @@ const Navbar = () => {
                                 className={`text-xs transition-colors ${
                                     page.endsWith("products")
                                         ? "text-white"
-                                        : isScrolled
+                                        : isIntersecting
                                         ? "text-gray-500"
                                         : "text-gray-200"
                                 }`}
@@ -81,7 +84,7 @@ const Navbar = () => {
                                 key={item.name}
                                 href={item.href}
                                 className={`font-medium transition-colors ${
-                                    isScrolled
+                                    isIntersecting
                                         ? "text-gray-700 hover:text-amber-600"
                                         : "text-white hover:text-amber-400"
                                 }`}
@@ -94,9 +97,10 @@ const Navbar = () => {
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center">
                         <button
+                            ref={butRef}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className={`transition-colors ${
-                                isScrolled ? "text-gray-700" : "text-white"
+                                isIntersecting ? "text-gray-700" : "text-white"
                             } hover:text-amber-600`}
                         >
                             <svg
@@ -120,10 +124,12 @@ const Navbar = () => {
                 {isMenuOpen && (
                     <div className="md:hidden">
                         <div
-                            className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t transition-all ${
-                                isScrolled
-                                    ? "bg-white/20 backdrop-blur-md"
-                                    : "bg-black/50 backdrop-blur-md"
+                            className={`px-2 pt-2 pb-3 space-y-1 rounded-xl sm:px-3 transition-all ${
+                                page.endsWith("products")
+                                    ? "bg-black/50 text-white backdrop-blur-md"
+                                    : isIntersecting
+                                    ? "bg-white/20 text-black backdrop-blur-md"
+                                    : "bg-white/20 text-white backdrop-blur-md"
                             }`}
                         >
                             {links.map((item) => (
@@ -131,7 +137,7 @@ const Navbar = () => {
                                     key={item.name}
                                     href={item.href}
                                     className={`block px-3 py-2 transition-colors ${
-                                        isScrolled
+                                        isIntersecting
                                             ? "text-gray-700 hover:text-amber-600"
                                             : "text-white hover:text-amber-400"
                                     }`}
