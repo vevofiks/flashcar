@@ -161,10 +161,10 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
                             damping: 25,
                         }}
                         id="mobile-menu"
-                        className="md:hidden fixed w-[80vw] h-fit top-[3em] z-[60] m-10"
+                        className="md:hidden fixed w-[80vw] rounded-3xl h-fit top-[3em] z-[60] m-10"
                     >
                         <div
-                            className={`px-2 pt-2 pb-3 space-y-1 rounded-xl sm:px-3 transition-all ${
+                            className={`px-2 pt-2 pb-3 space-y-1 rounded-3xl sm:px-3 transition-all ${
                                 page.endsWith("products")
                                     ? "bg-black/50"
                                     : isIntersecting
