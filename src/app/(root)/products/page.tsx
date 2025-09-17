@@ -108,7 +108,7 @@ const ProductsListing = () => {
                                     {/* WhatsApp Enquiry Button */}
                                     <div>
                                         <Link
-                                            href={`https://wa.me/919876543210?text=Hi, I'm interested in *${product.name}*`}
+                                            href={`https://wa.me/966546457500?text=Hi, I'm interested in *${product.name}*`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="mt-auto inline-flex items-center w-full justify-center gap-2 px-4 py-2 rounded-xl bg-green-500 text-white font-medium shadow-md hover:bg-green-600 hover:shadow-lg transition-all duration-300"
