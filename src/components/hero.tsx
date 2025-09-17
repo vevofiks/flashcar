@@ -26,6 +26,7 @@ const Hero = () => {
         { src: "/assets/bm.png" },
         { src: "/assets/porsche.png" },
         { src: "/assets/benz.png" },
+        { src: "/assets/defender.png" },
     ];
 
     const cars = [
