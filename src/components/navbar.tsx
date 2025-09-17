@@ -19,14 +19,19 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
     ];
 
     useEffect(() => {
-        const handleButtonClose = () => {
-            setIsMenuOpen(false);
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                butRef.current &&
+                !butRef.current.contains(event.target as Node) &&
+                !(event.target as HTMLElement).closest("#mobile-menu")
+            ) {
+                setIsMenuOpen(false);
+            }
         };
 
-        butRef.current?.addEventListener("focusout", handleButtonClose);
-
+        document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            butRef.current?.removeEventListener("focusout", handleButtonClose);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
@@ -122,7 +127,7 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className="md:hidden">
+                    <div id="mobile-menu" className="md:hidden">
                         <div
                             className={`px-2 pt-2 pb-3 space-y-1 rounded-xl sm:px-3 transition-all ${
                                 page.endsWith("products")
