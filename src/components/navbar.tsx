@@ -129,9 +129,13 @@ const Navbar = () => {
                                 "About",
                                 "Contact",
                             ].map((item) => (
-                                <a
+                                <Link
                                     key={item}
-                                    href={`#${item.toLowerCase()}`}
+                                    href={
+                                    item === "Products"
+                                        ? "/products"
+                                        : `/#${item.toLowerCase()}`
+                                }
                                     className={`block px-3 py-2 transition-colors ${
                                         isScrolled
                                             ? "text-gray-700 hover:text-amber-600"
@@ -139,7 +143,7 @@ const Navbar = () => {
                                     }`}
                                 >
                                     {item}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>
