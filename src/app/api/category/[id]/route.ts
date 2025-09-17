@@ -6,7 +6,7 @@ import { ObjectId } from "mongodb";
 
 export async function PUT(
     req: NextRequest,
-    context: { params: any } // 👈 use any here
+    context: { params: any } 
 ) {
     const client = await clientPromise;
     const db = client.db("flashcar");
