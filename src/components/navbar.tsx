@@ -19,6 +19,14 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const links = [
+        { name: "Home", href: "/#home" },
+        { name: "Products", href: "/products" },
+        { name: "Services", href: "/#services" },
+        { name: "About", href: "/about" },
+        { name: "Contact", href: "/contact" },
+    ];
+
     return (
         <nav
             className={`fixed w-full z-50 transition-all duration-500 ${
@@ -43,14 +51,20 @@ const Navbar = () => {
                         <div className="ml-3">
                             <span
                                 className={`font-bold text-2xl transition-colors ${
-                                    isScrolled ? "text-gray-900" : "text-white"
+                                    page.endsWith("products")
+                                        ? "text-white"
+                                        : isScrolled
+                                        ? "text-gray-900"
+                                        : "text-white"
                                 }`}
                             >
                                 Flash Car
                             </span>
                             <div
                                 className={`text-xs transition-colors ${
-                                    isScrolled
+                                    page.endsWith("products")
+                                        ? "text-white"
+                                        : isScrolled
                                         ? "text-gray-500"
                                         : "text-gray-200"
                                 }`}
@@ -62,27 +76,17 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
-                        {[
-                            "Home",
-                            "Products",
-                            "Services",
-                            "About",
-                            "Contact",
-                        ].map((item) => (
+                        {links.map((item) => (
                             <Link
-                                key={item}
-                                href={
-                                    item === "Products"
-                                        ? "/products"
-                                        : `/#${item.toLowerCase()}`
-                                }
+                                key={item.name}
+                                href={item.href}
                                 className={`font-medium transition-colors ${
                                     isScrolled
                                         ? "text-gray-700 hover:text-amber-600"
                                         : "text-white hover:text-amber-400"
                                 }`}
                             >
-                                {item}
+                                {item.name}
                             </Link>
                         ))}
                     </div>
@@ -122,27 +126,17 @@ const Navbar = () => {
                                     : "bg-black/50 backdrop-blur-md"
                             }`}
                         >
-                            {[
-                                "Home",
-                                "Products",
-                                "Services",
-                                "About",
-                                "Contact",
-                            ].map((item) => (
+                            {links.map((item) => (
                                 <Link
-                                    key={item}
-                                    href={
-                                    item === "Products"
-                                        ? "/products"
-                                        : `/#${item.toLowerCase()}`
-                                }
+                                    key={item.name}
+                                    href={item.href}
                                     className={`block px-3 py-2 transition-colors ${
                                         isScrolled
                                             ? "text-gray-700 hover:text-amber-600"
                                             : "text-white hover:text-amber-400"
                                     }`}
                                 >
-                                    {item}
+                                    {item.name}
                                 </Link>
                             ))}
                         </div>

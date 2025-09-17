@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { fetchProducts } from "@/services/productService";
 import { Product } from "@/interfces/productInterface";
 import Image from "next/image";
+import { FaWhatsapp } from "react-icons/fa6";
+import Link from "next/link";
 
 const ProductsListing = () => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -88,7 +90,7 @@ const ProductsListing = () => {
                                     ></div>
                                 </div>
 
-                                <div className="p-6">
+                                <div className="p-6 flex flex-col h-full">
                                     <div className="flex items-start justify-between mb-2">
                                         <h3 className="text-lg font-bold text-gray-800 flex-1">
                                             {product.name}
@@ -99,8 +101,21 @@ const ProductsListing = () => {
                                         {product.description}
                                     </p>
 
-                                    <div className="flex items-center gap-1 mb-4">
-                                        {product.category?.name || "N/A"}
+                                    <div className="flex items-center text-gray-400 gap-1 mb-4">
+                                        Category: {product.category?.name || "N/A"}
+                                    </div>
+
+                                    {/* WhatsApp Enquiry Button */}
+                                    <div>
+                                        <Link
+                                            href={`https://wa.me/919876543210?text=Hi, I'm interested in *${product.name}*`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="mt-auto inline-flex items-center w-full justify-center gap-2 px-4 py-2 rounded-xl bg-green-500 text-white font-medium shadow-md hover:bg-green-600 hover:shadow-lg transition-all duration-300"
+                                        >
+                                            <FaWhatsapp className="text-xl" />
+                                            Enquire
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
