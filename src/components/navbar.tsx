@@ -152,24 +152,24 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        initial={{ y: -300, scale: 0, opacity: 0 }}
-                        animate={{ y: 0, scale: 1, opacity: 1 }}
-                        exit={{ y: -300, scale: 0, opacity: 0 }}
+                        initial={{ y: -300, scale: 0, opacity: 0, backdropFilter: 'blur(0)' }}
+                        animate={{ y: 0, scale: 1, opacity: 1, backdropFilter: 'blur(12px)' }}
+                        exit={{ y: -300, scale: 0, opacity: 0, backdropFilter: 'blur(0)' }}
                         transition={{
                             type: "spring",
                             stiffness: 120,
                             damping: 25,
                         }}
                         id="mobile-menu"
-                        className="md:hidden fixed w-full h-fit top-[3em] z-[60] p-8"
+                        className="md:hidden fixed w-[80vw] h-fit top-[3em] z-[60] m-10"
                     >
                         <div
                             className={`px-2 pt-2 pb-3 space-y-1 rounded-xl sm:px-3 transition-all ${
                                 page.endsWith("products")
-                                    ? "bg-black/50 backdrop-blur-md"
+                                    ? "bg-black/50"
                                     : isIntersecting
-                                    ? "bg-black/50 backdrop-blur-md"
-                                    : "bg-white/20 backdrop-blur-md"
+                                    ? "bg-black/50"
+                                    : "bg-white/20"
                             }`}
                         >
                             {links.map((item) => (
