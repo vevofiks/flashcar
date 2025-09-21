@@ -8,37 +8,40 @@ import {
     Target,
     Users,
 } from "lucide-react";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 const About = () => {
     return (
         <div id="about" className="bg-white">
             {/* Hero Section */}
-            <section className="bg-gradient-to-br from-slate-900 via-gray-900 to-amber-900 text-white py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div className="space-y-6">
-                        <div className="inline-flex items-center bg-amber-500/20 px-6 py-3 rounded-full border border-amber-400/30">
-                            <Award className="h-5 w-5 text-amber-400 mr-2" />
-                            <span className="text-amber-100">
-                                30+ Years of Automotive Excellence
-                            </span>
+            <ViewTransition name="about">
+                <section className="bg-gradient-to-br from-slate-900 via-gray-900 to-amber-900 text-white py-20">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <div className="space-y-6">
+                            <div className="inline-flex items-center bg-amber-500/20 px-6 py-3 rounded-full border border-amber-400/30">
+                                <Award className="h-5 w-5 text-amber-400 mr-2" />
+                                <span className="text-amber-100">
+                                    30+ Years of Automotive Excellence
+                                </span>
+                            </div>
+
+                            <h1 className="text-5xl md:text-6xl font-bold">
+                                About
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+                                    {" "}
+                                    Flash Car
+                                </span>
+                            </h1>
+
+                            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                                Flash Car, under the umbrella of Riyadh Sky, is
+                                a Qatar-based company dedicated to redefining
+                                the automotive service and product experience.
+                            </p>
                         </div>
-
-                        <h1 className="text-5xl md:text-6xl font-bold">
-                            About
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
-                                {" "}
-                                Flash Car
-                            </span>
-                        </h1>
-
-                        <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                            Flash Car, under the umbrella of Riyadh Sky, is a
-                            Qatar-based company dedicated to redefining the
-                            automotive service and product experience.
-                        </p>
                     </div>
-                </div>
-            </section>
+                </section>
+            </ViewTransition>
 
             {/* Main Story Section */}
             <section className="py-20 bg-white">

@@ -15,7 +15,7 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
         { name: "Home", href: "/#home" },
         { name: "Products", href: "/products" },
         { name: "Services", href: "/#services" },
-        { name: "About", href: "/about" },
+        { name: "About", href: "/#about" },
         { name: "Contact", href: "/contact" },
     ];
 
@@ -88,17 +88,6 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
                                 >
                                     Flash Car
                                 </span>
-                                <div
-                                    className={`text-xs transition-colors ${
-                                        page.endsWith("products")
-                                            ? "text-white"
-                                            : isIntersecting
-                                            ? "text-gray-500"
-                                            : "text-gray-200"
-                                    }`}
-                                >
-                                    Riyadh Sky
-                                </div>
                             </div>
                         </Link>
 

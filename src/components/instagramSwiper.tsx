@@ -17,6 +17,7 @@ import {
     Instagram,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Post = {
     id: number;
@@ -157,11 +158,16 @@ const InstagramSwiper = () => {
         <section className="py-20 bg-gray-100">
             {/* Header */}
             <div className="text-center mb-12">
-                <div className="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 rounded-full mb-6">
+                <div className="inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 rounded-full mb-6 hover:scale-[1.1] ease-in-out duration-300">
                     <Instagram className="h-6 w-6 text-white mr-2" />
-                    <span className="text-white font-semibold">
+                    <Link
+                        className="text-white font-semibold"
+                        href={
+                            "https://www.instagram.com/flash_car_dammam?igsh=MjQ4NDNrbjhvM3dl"
+                        }
+                    >
                         Follow Our Journey
-                    </span>
+                    </Link>
                 </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">
                     Latest from{" "}
@@ -181,7 +187,7 @@ const InstagramSwiper = () => {
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab as "posts" | "reels")}
-                        className={`px-6 py-2 font-medium rounded-md mr-2 ${
+                        className={`px-6 py-2 font-medium rounded-md cursor-pointer mr-2 ${
                             activeTab === tab
                                 ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
                                 : "bg-white text-gray-700"
@@ -202,7 +208,10 @@ const InstagramSwiper = () => {
                 </button>
                 <div className="flex overflow-hidden">
                     {getVisibleItems().map((item) => (
-                        <div key={item.id} className="w-full sm:w-1/2 lg:w-1/3 p-2">
+                        <div
+                            key={item.id}
+                            className="w-full sm:w-1/2 lg:w-1/3 p-2"
+                        >
                             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                                 <div className="relative h-48">
                                     {item.type === "image" ? (

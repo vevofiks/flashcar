@@ -1,5 +1,6 @@
 "use client";
 
+import About from "@/components/about";
 import Features from "@/components/features";
 import Hero from "@/components/hero";
 import InstagramSwiper from "@/components/instagramSwiper";
@@ -20,6 +21,7 @@ export default function Home() {
             <Services />
             <Features />
             <InstagramSwiper />
+            <About />
         </div>
     );
 }
