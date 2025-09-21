@@ -26,6 +26,13 @@ const Footer = () => {
                             Premium automotive care with 30+ years of excellence
                             across Qatar, Dubai, and Dammam.
                         </p>
+                        <div className="text-sm flex text-gray-400">
+                            <p>Qatar</p>
+                            <span className="mx-4">|</span>
+                            <p>Dubai</p>
+                            <span className="mx-4">|</span>
+                            <p>Dammam</p>
+                        </div>
                     </div>
 
                     <div className="space-y-4">
@@ -78,38 +85,37 @@ const Footer = () => {
 
                     <div className="space-y-4">
                         <h4 className="font-bold text-lg text-amber-400">
-                            Locations
+                            Connect with us
                         </h4>
-                        <div className="space-y-2 text-sm">
-                            <p className="text-gray-400">Qatar (Head Office)</p>
-                            <p className="text-gray-400">Dubai (30+ Years)</p>
-                            <p className="text-gray-400">Dammam (Operations)</p>
+                        <div className="flex gap-2">
+                            <Link
+                                href="https://www.instagram.com/flash_car_dammam?igsh=MjQ4NDNrbjhvM3dl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaInstagram
+                                    size={34}
+                                    className="bg-amber-400 text-black p-1.5 rounded-full"
+                                />
+                            </Link>
+                            <Link
+                                href="https://www.facebook.com/share/1Eno116GEx/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <LuFacebook
+                                    size={34}
+                                    className="bg-amber-400 text-black p-1.5 rounded-full"
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>
 
-                <div className="border-t flex justify-center gap-6 border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                     <p>
                         &copy; 2025 Flash Car - Riyadh Sky. All rights reserved.
                     </p>
-                    <div className="flex gap-2">
-                        <Link
-                            href="https://www.instagram.com/flash_car_dammam?igsh=MjQ4NDNrbjhvM3dl"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <FaInstagram
-                                size={26}
-                                className="bg-amber-400 text-black p-1 rounded-full"
-                            />
-                        </Link>
-                        <Link href="" target="_blank" rel="noopener noreferrer">
-                            <LuFacebook
-                                size={26}
-                                className="bg-amber-400 text-black p-1 rounded-full"
-                            />
-                        </Link>
-                    </div>
                 </div>
             </div>
         </footer>
