@@ -1,4 +1,5 @@
 import { MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 import { FaInstagram } from "react-icons/fa6";
 import { LuFacebook } from "react-icons/lu";
 
@@ -57,26 +58,32 @@ const Contact = () => {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-end gap-2">
                             {/* instagram */}
-                            <div className="text-center space-y-4 group">
-                                <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
-                                    <FaInstagram className="h-10 w-10" />
+                            <Link href="https://www.instagram.com/flash_car_dammam?igsh=MjQ4NDNrbjhvM3dl">
+                                <div className="text-center space-y-4 group">
+                                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
+                                        <FaInstagram className="h-10 w-10" />
+                                    </div>
+                                    <p className="text-amber-400 font-semibold">
+                                        {contactInfo[1].primary}
+                                    </p>
                                 </div>
-                                <p className="text-amber-400 font-semibold">
-                                    {contactInfo[1].primary}
-                                </p>
-                            </div>
+                            </Link>
                             <span className="text-gray-400 mb-[1.1em]">|</span>
                             {/* facebook */}
-                            <div className="text-center space-y-4 group">
-                                <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
-                                    <LuFacebook className="h-10 w-10" />
+                            <Link href="https://www.facebook.com/share/1Eno116GEx/">
+                                <div className="text-center space-y-4 group">
+                                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
+                                        <LuFacebook className="h-10 w-10" />
+                                    </div>
+                                    <p className="text-amber-400 font-semibold">
+                                        {contactInfo[2].primary}
+                                    </p>
                                 </div>
-                                <p className="text-amber-400 font-semibold">
-                                    {contactInfo[2].primary}
-                                </p>
-                            </div>
+                            </Link>
                         </div>
-                        <p className="text-sm text-gray-400">Just leave message</p>
+                        <p className="text-sm text-gray-400">
+                            Just leave message
+                        </p>
                     </div>
                     {/* locations */}
                     <div className="text-center space-y-4 group">
