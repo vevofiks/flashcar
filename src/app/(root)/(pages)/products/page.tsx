@@ -69,7 +69,7 @@ const ProductsListing = () => {
                             No products found
                         </h3>
                         <p className="text-gray-600">
-                            Try adjusting your search or filter criteria
+                            Try after sometime
                         </p>
                     </div>
                 ) : (
