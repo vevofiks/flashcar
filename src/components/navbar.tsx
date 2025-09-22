@@ -98,7 +98,9 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
                                     key={item.name}
                                     href={item.href}
                                     className={`font-medium transition-colors ${
-                                        isIntersecting
+                                        page.endsWith(item.name.toLowerCase())
+                                            ? "text-amber-500"
+                                            : isIntersecting
                                             ? "text-gray-700 hover:text-amber-600"
                                             : "text-white hover:text-amber-400"
                                     }`}
@@ -141,9 +143,24 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        initial={{ y: -300, scale: 0, opacity: 0, backdropFilter: 'blur(0)' }}
-                        animate={{ y: 0, scale: 1, opacity: 1, backdropFilter: 'blur(12px)' }}
-                        exit={{ y: -300, scale: 0, opacity: 0, backdropFilter: 'blur(0)' }}
+                        initial={{
+                            y: -300,
+                            scale: 0,
+                            opacity: 0,
+                            backdropFilter: "blur(0)",
+                        }}
+                        animate={{
+                            y: 0,
+                            scale: 1,
+                            opacity: 1,
+                            backdropFilter: "blur(12px)",
+                        }}
+                        exit={{
+                            y: -300,
+                            scale: 0,
+                            opacity: 0,
+                            backdropFilter: "blur(0)",
+                        }}
                         transition={{
                             type: "spring",
                             stiffness: 120,
@@ -166,7 +183,11 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
                                     onClick={() => setIsMenuOpen(false)}
                                     key={item.name}
                                     href={item.href}
-                                    className="block px-3 py-2 text-white text-center hover:text-amber-500"
+                                    className={`block px-3 py-2 text-center duration-150 hover:text-amber-500 ${
+                                        page.endsWith(item.name.toLowerCase())
+                                            ? "text-black"
+                                            : "text-white"
+                                    }`}
                                 >
                                     {item.name}
                                 </Link>

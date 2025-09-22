@@ -1,21 +1,21 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+import { FaInstagram } from "react-icons/fa6";
+import { LuFacebook } from "react-icons/lu";
 
 const Contact = () => {
     const contactInfo = [
         {
-            icon: Phone,
             title: "Call Us",
             primary: "+974 1234 5678",
             secondary: "Available 24/7 for emergencies",
         },
         {
-            icon: Mail,
-            title: "Email Us",
-            primary: "info@flashcar.qa",
-            secondary: "We'll respond within 2 hours",
+            primary: "flash_car_dammam",
         },
         {
-            icon: MapPin,
+            primary: "Flash-Car-Dammam",
+        },
+        {
             title: "Visit Our Locations",
             primary: "Qatar • Dubai • Dammam",
             secondary: "Multiple service centers",
@@ -39,25 +39,60 @@ const Contact = () => {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {contactInfo.map((contact, index) => (
-                        <div
-                            key={index}
-                            className="text-center space-y-4 group"
-                        >
-                            <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
-                                <contact.icon className="h-10 w-10" />
-                            </div>
-                            <h3 className="text-xl font-bold">
-                                {contact.title}
-                            </h3>
-                            <p className="text-amber-400 font-semibold">
-                                {contact.primary}
-                            </p>
-                            <p className="text-sm text-gray-400">
-                                {contact.secondary}
-                            </p>
+                    {/* phone */}
+                    <div className="text-center space-y-4 group">
+                        <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
+                            <Phone className="h-10 w-10" />
                         </div>
-                    ))}
+                        <h3 className="text-xl font-bold">
+                            {contactInfo[0].title}
+                        </h3>
+                        <p className="text-amber-400 font-semibold">
+                            {contactInfo[0].primary}
+                        </p>
+                        <p className="text-sm text-gray-400">
+                            {contactInfo[0].secondary}
+                        </p>
+                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="flex items-end gap-2">
+                            {/* instagram */}
+                            <div className="text-center space-y-4 group">
+                                <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
+                                    <FaInstagram className="h-10 w-10" />
+                                </div>
+                                <p className="text-amber-400 font-semibold">
+                                    {contactInfo[1].primary}
+                                </p>
+                            </div>
+                            <span className="text-gray-400 mb-[1.1em]">|</span>
+                            {/* facebook */}
+                            <div className="text-center space-y-4 group">
+                                <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
+                                    <LuFacebook className="h-10 w-10" />
+                                </div>
+                                <p className="text-amber-400 font-semibold">
+                                    {contactInfo[2].primary}
+                                </p>
+                            </div>
+                        </div>
+                        <p className="text-sm text-gray-400">Just leave message</p>
+                    </div>
+                    {/* locations */}
+                    <div className="text-center space-y-4 group">
+                        <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
+                            <MapPin className="h-10 w-10" />
+                        </div>
+                        <h3 className="text-xl font-bold">
+                            {contactInfo[3].title}
+                        </h3>
+                        <p className="text-amber-400 font-semibold">
+                            {contactInfo[3].primary}
+                        </p>
+                        <p className="text-sm text-gray-400">
+                            {contactInfo[3].secondary}
+                        </p>
+                    </div>
                 </div>
 
                 <div className="mt-16 text-center">

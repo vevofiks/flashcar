@@ -5,7 +5,7 @@ import { LuFacebook } from "react-icons/lu";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white py-12">
+        <footer className="bg-gray-900 text-white pt-12 pb-4">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-4 gap-8">
                     <div className="space-y-4">
@@ -112,7 +112,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
                     <p>
                         &copy; 2025 Flash Car - Riyadh Sky. All rights reserved.
                     </p>

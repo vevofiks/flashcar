@@ -80,11 +80,7 @@ const About = () => {
                                 <p>
                                     Guided by{" "}
                                     <strong className="text-amber-600">
-                                        Mr. Matar H. Almarri
-                                    </strong>{" "}
-                                    and managed by{" "}
-                                    <strong className="text-amber-600">
-                                        Mr. Abdurahman Puthalavan
+                                        Harfa and Flashcar Team
                                     </strong>
                                     , Flash Car continues to drive excellence in
                                     every service we provide.

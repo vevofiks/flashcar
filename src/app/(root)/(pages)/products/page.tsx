@@ -80,6 +80,7 @@ const ProductsListing = () => {
                                                 ? "scale-110"
                                                 : "scale-100"
                                         }`}
+                                        unoptimized={true}
                                     />
                                     <div
                                         className={`absolute inset-0 bg-gradient-to-t from-black/50 to-transparent transition-opacity duration-300 ${
@@ -102,7 +103,8 @@ const ProductsListing = () => {
                                     </p>
 
                                     <div className="flex items-center text-gray-400 gap-1 mb-4">
-                                        Category: {product.category?.name || "N/A"}
+                                        Category:{" "}
+                                        {product.category?.name || "N/A"}
                                     </div>
 
                                     {/* WhatsApp Enquiry Button */}
