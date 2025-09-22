@@ -29,8 +29,7 @@ const Contact = () => {
 
         const encodedMessage = `Hi, I'm ${formData.naam},%0A${formData.message}`;
 
-        router.replace(`https://wa.me/966546457500?text=${encodedMessage},
-            ${formData.message}`);
+        router.replace(`https://wa.me/966546457500?text=${encodedMessage}`);
         setFormData({
             naam: "",
             message: "",
