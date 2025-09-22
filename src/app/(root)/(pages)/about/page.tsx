@@ -1,6 +1,5 @@
 import {
     Award,
-    Calendar,
     Car,
     CheckCircle,
     Globe,
@@ -312,47 +311,64 @@ const About = () => {
                             Our Presence
                         </h2>
                         <p className="text-xl text-gray-300">
-                            Strategic locations serving the Middle East
+                            Strategic locations serving the Middle East & beyond
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-4 gap-8">
+                        {/* Saudi Arabia */}
+                        <div className="text-center space-y-4 group">
+                            <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
+                                <MapPin className="h-10 w-10" />
+                            </div>
+                            <h3 className="text-2xl font-bold">Saudi Arabia</h3>
+                            <p className="text-amber-400 font-semibold">
+                                Main Location
+                            </p>
+                            <p className="text-gray-400 text-sm">
+                                Central hub for our Middle East operations
+                            </p>
+                        </div>
+
+                        {/* Qatar */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
                                 <MapPin className="h-10 w-10" />
                             </div>
                             <h3 className="text-2xl font-bold">Qatar</h3>
                             <p className="text-amber-400 font-semibold">
-                                Current Base
+                                Main Location
                             </p>
-                            <p className="text-gray-400">
-                                Primary operations and service center
+                            <p className="text-gray-400 text-sm">
+                                Strong presence with advanced service facilities
                             </p>
                         </div>
 
+                        {/* Dubai */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
-                                <Calendar className="h-10 w-10" />
+                                <MapPin className="h-10 w-10" />
                             </div>
                             <h3 className="text-2xl font-bold">Dubai</h3>
                             <p className="text-amber-400 font-semibold">
-                                Head Office - 30+ Years
+                                Sister Company
                             </p>
-                            <p className="text-gray-400">
-                                Three decades of established presence
+                            <p className="text-gray-400 text-sm">
+                                Established hub with decades of experience
                             </p>
                         </div>
 
+                        {/* India */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
-                                <Users className="h-10 w-10" />
+                                <MapPin className="h-10 w-10" />
                             </div>
-                            <h3 className="text-2xl font-bold">Dammam</h3>
+                            <h3 className="text-2xl font-bold">India</h3>
                             <p className="text-amber-400 font-semibold">
-                                Operational Base
+                                Sister Company
                             </p>
-                            <p className="text-gray-400">
-                                Strong regional operations hub
+                            <p className="text-gray-400 text-sm">
+                                Support and innovation center
                             </p>
                         </div>
                     </div>

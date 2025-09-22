@@ -7,7 +7,7 @@ const Contact = () => {
     const contactInfo = [
         {
             title: "Call Us",
-            primary: "+974 1234 5678",
+            primary: "+966 54 645 7500",
             secondary: "Available 24/7 for emergencies",
         },
         {
