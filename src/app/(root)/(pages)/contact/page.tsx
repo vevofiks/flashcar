@@ -18,7 +18,7 @@ const Contact = () => {
         },
         {
             title: "Visit Our Locations",
-            primary: "Saudi • Qatar",
+            primary: "Saudi Arabia • Qatar",
             secondary: "Multiple service centers",
         },
     ];
