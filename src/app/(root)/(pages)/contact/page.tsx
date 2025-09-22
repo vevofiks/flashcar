@@ -1,9 +1,42 @@
+"use client";
+
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { FaInstagram } from "react-icons/fa6";
+import { LiaTelegramPlane } from "react-icons/lia";
 import { LuFacebook } from "react-icons/lu";
 
 const Contact = () => {
+    const router = useRouter();
+    const [formData, setFormData] = useState({
+        naam: "",
+        message: "",
+    });
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        setFormData((p) => ({ ...p, [e.target.id]: e.target.value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!formData.naam || !formData.message) {
+            return;
+        }
+
+        const encodedMessage = `Hi, I'm ${formData.naam},%0A${formData.message}`;
+
+        router.replace(`https://wa.me/966546457500?text=${encodedMessage},
+            ${formData.message}`);
+        setFormData({
+            naam: "",
+            message: "",
+        });
+    };
+
     const contactInfo = [
         {
             title: "Call Us",
@@ -58,7 +91,10 @@ const Contact = () => {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-end gap-2">
                             {/* instagram */}
-                            <Link href="https://www.instagram.com/flash_car_dammam?igsh=MjQ4NDNrbjhvM3dl">
+                            <Link
+                                target="_blank"
+                                href="https://www.instagram.com/flash_car_dammam?igsh=MjQ4NDNrbjhvM3dl"
+                            >
                                 <div className="text-center space-y-4 group">
                                     <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
                                         <FaInstagram className="h-10 w-10" />
@@ -70,7 +106,10 @@ const Contact = () => {
                             </Link>
                             <span className="text-gray-400 mb-[1.1em]">|</span>
                             {/* facebook */}
-                            <Link href="https://www.facebook.com/share/1Eno116GEx/">
+                            <Link
+                                target="_blank"
+                                href="https://www.facebook.com/share/1Eno116GEx/"
+                            >
                                 <div className="text-center space-y-4 group">
                                     <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all shadow-lg">
                                         <LuFacebook className="h-10 w-10" />
@@ -102,10 +141,35 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="mt-16 text-center">
-                    <button className="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-orange-700 transition-all transform hover:scale-105 shadow-lg">
-                        Schedule Your Service Today
-                    </button>
+                <div className="flex flex-col items-center mt-16">
+                    <h3 className="text-3xl">Contact us</h3>
+                    <form
+                        onSubmit={handleSubmit}
+                        className="flex flex-col gap-1 my-[2em] px-[2em] md:px-0 w-screen sm:w-[60vw] md:w-[30vw] outline-none"
+                    >
+                        <label htmlFor="naam">Name</label>
+                        <input
+                            id="naam"
+                            type="text"
+                            value={formData.naam}
+                            onChange={handleChange}
+                            className="bg-[#3b3b3b] text-white rounded-lg outline-none p-1 h-[2em]"
+                        />
+                        <label htmlFor="message">Message</label>
+                        <textarea
+                            id="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            className="bg-[#3b3b3b] text-white rounded-lg outline-none p-1 min-h-[6em]"
+                        ></textarea>
+                        <button
+                            type="submit"
+                            className="flex gap-2 justify-center items-end bg-amber-300 text-black font-semibold rounded-2xl pt-2 pb-2.5 my-4 cursor-pointer"
+                        >
+                            <LiaTelegramPlane size={21} />
+                            send
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>

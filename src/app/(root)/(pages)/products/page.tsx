@@ -118,11 +118,6 @@ const ProductsListing = () => {
                                         {product.description}
                                     </p>
 
-                                    {/* <div className="flex items-center text-gray-400 gap-1 mb-4">
-                                        Category:{" "}
-                                        
-                                    </div> */}
-
                                     {/* WhatsApp Enquiry Button */}
                                     <div>
                                         <Link
