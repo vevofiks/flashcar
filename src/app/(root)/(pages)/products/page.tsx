@@ -31,7 +31,20 @@ const ProductsListing = () => {
     );
 
     return (
-        <div className="min-h-screen pt-16 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="min-h-screen pt-6 bg-[#fffae6]">
+            <section className="bg-gradient-to-br from-slate-900 via-gray-900 to-amber-900 text-white py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="space-y-6">
+                        <h1 className="text-5xl md:text-6xl text-amber-400 font-bold">
+                            Our Products
+                        </h1>
+                        <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                            Comprehensive automotive solutions delivered with
+                            30+ years of expertise
+                        </p>
+                    </div>
+                </div>
+            </section>
             {/* Products Grid */}
             <div className="max-w-7xl mx-auto px-4 py-12">
                 <div className="flex justify-between items-center mb-8">
@@ -82,6 +95,9 @@ const ProductsListing = () => {
                                         }`}
                                         unoptimized={true}
                                     />
+                                    <div className="absolute top-2 left-2 bg-amber-400 px-3 py-1 rounded-xl shadow shadow-black/40 text-sm text-black">
+                                        {product.category?.name || "N/A"}
+                                    </div>
                                     <div
                                         className={`absolute inset-0 bg-gradient-to-t from-black/50 to-transparent transition-opacity duration-300 ${
                                             hoveredCard === product._id
@@ -102,10 +118,10 @@ const ProductsListing = () => {
                                         {product.description}
                                     </p>
 
-                                    <div className="flex items-center text-gray-400 gap-1 mb-4">
+                                    {/* <div className="flex items-center text-gray-400 gap-1 mb-4">
                                         Category:{" "}
-                                        {product.category?.name || "N/A"}
-                                    </div>
+                                        
+                                    </div> */}
 
                                     {/* WhatsApp Enquiry Button */}
                                     <div>

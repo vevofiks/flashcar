@@ -59,7 +59,7 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
             <nav
                 className={`fixed w-full z-50 transition-all duration-500 ${
                     page.endsWith("products")
-                        ? "bg-gray-800"
+                        ? "bg-slate-900"
                         : isIntersecting
                         ? "bg-white/20 backdrop-blur-md shadow-lg"
                         : "bg-transparent backdrop-blur-sm"
@@ -76,19 +76,6 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
                                 height={80}
                                 priority
                             />
-                            <div className="ml-3">
-                                <span
-                                    className={`font-bold text-2xl transition-colors ${
-                                        page.endsWith("products")
-                                            ? "text-white"
-                                            : isIntersecting
-                                            ? "text-gray-900"
-                                            : "text-white"
-                                    }`}
-                                >
-                                    Flash Car
-                                </span>
-                            </div>
                         </Link>
 
                         {/* Desktop Menu */}

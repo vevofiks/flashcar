@@ -13,7 +13,6 @@ const Services = () => {
                 "Paint Protection",
                 "Ceramic Coating",
             ],
-            price: "Starting from QAR 299",
         },
         {
             icon: Settings,
@@ -26,7 +25,6 @@ const Services = () => {
                 "Security Systems",
                 "Custom Lighting",
             ],
-            price: "Starting from QAR 199",
         },
         {
             icon: Wrench,
@@ -39,7 +37,6 @@ const Services = () => {
                 "Leather Treatment",
                 "Interior Styling",
             ],
-            price: "Starting from QAR 399",
         },
         {
             icon: Package,
@@ -52,7 +49,6 @@ const Services = () => {
                 "Fast Delivery",
                 "Expert Installation",
             ],
-            price: "Competitive Pricing",
         },
     ];
 
@@ -104,15 +100,6 @@ const Services = () => {
                                             </div>
                                         )
                                     )}
-                                </div>
-
-                                <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                                    <div className="text-lg font-bold text-amber-600">
-                                        {service.price}
-                                    </div>
-                                    <button className="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-700 transition-all">
-                                        Book Now
-                                    </button>
                                 </div>
                             </div>
                         </div>

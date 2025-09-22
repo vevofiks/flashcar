@@ -8,6 +8,7 @@ import {
     Sparkles,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
 
 interface IHero {
@@ -244,20 +245,15 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                     : "translate-y-6 opacity-0"
                             }`}
                         >
-                            <button className="group bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white px-8 py-3 rounded-2xl font-bold text-xl hover:from-amber-600 hover:via-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/25 flex items-center justify-center space-x-3 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                                <span className="relative z-10">
-                                    Schedule Service
-                                </span>
-                                <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-                            </button>
-                            <button className="group border-3 border-amber-400 text-amber-400 px-8 py-4 rounded-2xl font-bold text-xl hover:bg-amber-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center space-x-3 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                                <span className="relative z-10">
-                                    View Services
-                                </span>
-                                <Zap className="h-6 w-6 group-hover:rotate-12 transition-transform duration-200 relative z-10" />
-                            </button>
+                            <Link href="#services">
+                                <button className="group border-3 border-amber-400 text-amber-400 px-8 py-4 rounded-2xl font-bold text-xl hover:bg-amber-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center space-x-3 relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                                    <span className="relative z-10">
+                                        View Services
+                                    </span>
+                                    <Zap className="h-6 w-6 group-hover:rotate-12 transition-transform duration-200 relative z-10" />
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Enhanced Feature Icons */}
@@ -285,7 +281,16 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                 </span>
                             </div>
                         </div>
+                    </div>
 
+                    {/* Right Content - Realistic Car */}
+                    <div
+                        className={`relative transition-all duration-1500 delay-600 ${
+                            isVisible
+                                ? "translate-x-0 opacity-100"
+                                : "translate-x-20 opacity-0"
+                        }`}
+                    >
                         {/* Cycling Service Display */}
                         <div
                             className={`mt-8 transition-all duration-1000 delay-1500 ${
@@ -330,16 +335,6 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                 ))}
                             </div>
                         </div>
-                    </div>
-
-                    {/* Right Content - Realistic Car */}
-                    <div
-                        className={`relative transition-all duration-1500 delay-600 ${
-                            isVisible
-                                ? "translate-x-0 opacity-100"
-                                : "translate-x-20 opacity-0"
-                        }`}
-                    >
                         {/* Main Car Container */}
                         <div className="relative">
                             {/* Realistic Car SVG */}
@@ -406,15 +401,6 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                         Satisfaction
                                     </div>
                                 </div>
-                            </div>
-
-                            {/* Call to Action Button */}
-                            <div className="text-center mt-8">
-                                <button className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-amber-500/25 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-110 flex items-center space-x-3 mx-auto group">
-                                    <Sparkles className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                                    <span>Get Free Quote</span>
-                                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
                             </div>
                         </div>
                     </div>
