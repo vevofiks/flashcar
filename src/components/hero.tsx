@@ -1,12 +1,4 @@
-import {
-    Clock,
-    Shield,
-    Star,
-    Zap,
-    ArrowRight,
-    CheckCircle,
-    Sparkles,
-} from "lucide-react";
+import { Clock, Shield, Star, Zap, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
