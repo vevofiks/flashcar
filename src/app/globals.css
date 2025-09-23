@@ -50,21 +50,29 @@ a {
 
 /* Global container */
 .container {
-  max-width: 1280px;   /* Same as Tailwind max-w-7xl */
+  max-width: 1280px;
+  /* Same as Tailwind max-w-7xl */
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;  /* px-6 */
+  padding-left: 1.5rem;
+  /* px-6 */
   padding-right: 1.5rem;
 }
 
 /* Section spacing */
 section {
-  padding-top: 4rem;   /* py-16 */
+  padding-top: 4rem;
+  /* py-16 */
   padding-bottom: 4rem;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   /* color: var(--foreground); */
@@ -73,7 +81,30 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Paragraphs */
 p {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   line-height: 1.6;
   /* color: var(--foreground); */
+}
+
+
+@keyframes scrollSmooth {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - 2rem));
+  }
+}
+
+.animate-scroll-smooth {
+  display: flex;
+  gap: 4rem;
+  /* Same as gap-6 */
+  animation: scrollSmooth 12.5s linear infinite;
+  /* width: fit-content; */
+}
+
+.animate-scroll-smooth:hover {
+  animation-play-state: paused;
 }
