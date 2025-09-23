@@ -404,9 +404,6 @@ const About = () => {
                                     <div className="font-bold text-gray-900">
                                         Flash Car
                                     </div>
-                                    <div className="text-sm text-gray-600">
-                                        Riyadh Sky
-                                    </div>
                                 </div>
                             </div>
                         </div>
