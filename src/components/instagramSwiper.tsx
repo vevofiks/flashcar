@@ -199,10 +199,10 @@ const InstagramSwiper = () => {
             </div>
 
             {/* Carousel */}
-            <div className="relative">
+            <div className="relative mx-5 px-5 md:mx-6 md:px-16">
                 <button
                     onClick={prevSlide}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow"
+                    className="absolute z-50 left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow shadow-black/40"
                 >
                     <ChevronLeft className="h-6 w-6" />
                 </button>
@@ -298,7 +298,7 @@ const InstagramSwiper = () => {
                 </div>
                 <button
                     onClick={nextSlide}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow"
+                    className="absolute z-50 right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow shadow-black/40"
                 >
                     <ChevronRight className="h-6 w-6" />
                 </button>

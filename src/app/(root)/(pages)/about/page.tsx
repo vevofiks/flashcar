@@ -8,6 +8,7 @@ import {
     Users,
 } from "lucide-react";
 import { unstable_ViewTransition as ViewTransition } from "react";
+import { FaRegFlag } from "react-icons/fa";
 
 const About = () => {
     return (
@@ -319,7 +320,7 @@ const About = () => {
                         {/* Saudi Arabia */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
-                                <MapPin className="h-10 w-10" />
+                                <FaRegFlag className="h-10 w-10" />
                             </div>
                             <h3 className="text-2xl font-bold">Saudi Arabia</h3>
                             <p className="text-amber-400 font-semibold">
@@ -333,7 +334,7 @@ const About = () => {
                         {/* Qatar */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
-                                <MapPin className="h-10 w-10" />
+                                <FaRegFlag className="h-10 w-10" />
                             </div>
                             <h3 className="text-2xl font-bold">Qatar</h3>
                             <p className="text-amber-400 font-semibold">
@@ -347,7 +348,7 @@ const About = () => {
                         {/* Dubai */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
-                                <MapPin className="h-10 w-10" />
+                                <FaRegFlag className="h-10 w-10" />
                             </div>
                             <h3 className="text-2xl font-bold">Dubai</h3>
                             <p className="text-amber-400 font-semibold">
@@ -361,7 +362,7 @@ const About = () => {
                         {/* India */}
                         <div className="text-center space-y-4 group">
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
-                                <MapPin className="h-10 w-10" />
+                                <FaRegFlag className="h-10 w-10" />
                             </div>
                             <h3 className="text-2xl font-bold">India</h3>
                             <p className="text-amber-400 font-semibold">
