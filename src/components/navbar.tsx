@@ -57,7 +57,7 @@ const Navbar = ({ isIntersecting }: { isIntersecting?: boolean }) => {
     return (
         <>
             <nav
-                className={`fixed w-full z-50 transition-all duration-500 ${
+                className={`fixed w-full z-[100] transition-all duration-500 ${
                     page.endsWith("products")
                         ? "bg-slate-900"
                         : isIntersecting
