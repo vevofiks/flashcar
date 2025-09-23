@@ -9,7 +9,7 @@ const Carousel = () => {
                 Our brand partners
             </h1>
 
-            <div className="relative overflow-hidden w-1/3">
+            <div className="relative overflow-hidden w-[calc(100%-2rem)] sm:w-1/2 md:w-1/3">
                 <div className="absolute z-50 top-0 left-0 h-full w-20 bg-gradient-to-r from-[#0B1628] to-transparent pointer-events-none" />
                 <div className="absolute z-50 top-0 right-0 h-full w-20 bg-gradient-to-l from-[#0B1628] to-transparent pointer-events-none" />
 
