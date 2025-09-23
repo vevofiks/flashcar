@@ -21,9 +21,9 @@ export default function Home() {
             />
             <Services />
             <Features />
+            <Carousel />
             <InstagramSwiper />
             <About />
-            <Carousel />
         </div>
     );
 }
