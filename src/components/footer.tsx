@@ -1,4 +1,4 @@
-import { Car } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa6";
 import { LuFacebook } from "react-icons/lu";
@@ -11,15 +11,17 @@ const Footer = () => {
                     <div className="space-y-4">
                         <div className="flex items-center">
                             <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
-                                <Car className="h-6 w-6 text-white" />
+                                <Image
+                                    src="/assets/flashcar.png"
+                                    alt="Flash Car Logo"
+                                    width={48}
+                                    height={48}
+                                />
                             </div>
                             <div>
                                 <span className="font-bold text-xl">
                                     Flash Car
                                 </span>
-                                <div className="text-xs text-gray-400">
-                                    Riyadh Sky
-                                </div>
                             </div>
                         </div>
                         <p className="text-gray-400 text-sm">

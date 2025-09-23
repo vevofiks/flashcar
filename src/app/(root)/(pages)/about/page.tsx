@@ -286,7 +286,7 @@ const About = () => {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-gray-900">
-                                    Mr. Abdurahman Puthalavan
+                                    Mr. Abduraheem Puthalavan
                                 </h3>
                                 <p className="text-blue-600 font-semibold mb-4">
                                     Management
