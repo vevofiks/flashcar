@@ -116,7 +116,7 @@ const Footer = () => {
 
                 <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
                     <p>
-                        &copy; 2025 Flash Car - Riyadh Sky. All rights reserved.
+                        &copy; 2025 Flash Car. All rights reserved.
                     </p>
                 </div>
             </div>
