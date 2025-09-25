@@ -10,18 +10,13 @@ const Footer = () => {
                 <div className="grid md:grid-cols-4 gap-8">
                     <div className="space-y-4">
                         <div className="flex items-center">
-                            <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center mr-3">
+                            <div className="flex items-center justify-center mr-3">
                                 <Image
                                     src="/assets/flashcar.png"
                                     alt="Flash Car Logo"
-                                    width={48}
-                                    height={48}
+                                    width={100}
+                                    height={80}
                                 />
-                            </div>
-                            <div>
-                                <span className="font-bold text-xl">
-                                    Flash Car
-                                </span>
                             </div>
                         </div>
                         <p className="text-gray-400 text-sm">
