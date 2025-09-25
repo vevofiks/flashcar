@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 import { LuFacebook } from "react-icons/lu";
 
 const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white pt-12 pb-4">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Footer Grid */}
                 <div className="grid md:grid-cols-4 gap-8">
+                    
+                    {/* Brand Section */}
                     <div className="space-y-4">
                         <div className="flex items-center">
                             <div className="flex items-center justify-center mr-3">
@@ -21,17 +24,22 @@ const Footer = () => {
                         </div>
                         <p className="text-gray-400 text-sm">
                             Premium automotive care with 30+ years of excellence
-                            across Qatar, Dubai, and Dammam.
+                            across Qatar, Dubai, Hong Kong, Saudi Arabia, and India.
                         </p>
-                        <div className="text-sm flex text-gray-400">
+                        <div className="text-sm flex flex-wrap gap-2 text-gray-400">
                             <p>Qatar</p>
-                            <span className="mx-4">|</span>
+                            <span>|</span>
                             <p>Dubai</p>
-                            <span className="mx-4">|</span>
-                            <p>Dammam</p>
+                            <span>|</span>
+                            <p>Saudi Arabia</p>
+                            <span>|</span>
+                            <p>Hong Kong</p>
+                            <span>|</span>
+                            <p>India</p>
                         </div>
                     </div>
 
+                    {/* Quick Links */}
                     <div className="space-y-4">
                         <h4 className="font-bold text-lg text-amber-400">
                             Quick Links
@@ -64,22 +72,20 @@ const Footer = () => {
                         </div>
                     </div>
 
+                    {/* Our Services */}
                     <div className="space-y-4">
                         <h4 className="font-bold text-lg text-amber-400">
                             Our Services
                         </h4>
                         <div className="space-y-2 text-sm">
-                            <p className="text-gray-400">
-                                Car Detailing & Polish
-                            </p>
-                            <p className="text-gray-400">
-                                Accessories Installation
-                            </p>
+                            <p className="text-gray-400">Car Detailing & Polish</p>
+                            <p className="text-gray-400">Accessories Installation</p>
                             <p className="text-gray-400">Upholstery Services</p>
                             <p className="text-gray-400">Spare Parts</p>
                         </div>
                     </div>
 
+                    {/* Social Links */}
                     <div className="space-y-4">
                         <h4 className="font-bold text-lg text-amber-400">
                             Connect with us
@@ -109,10 +115,9 @@ const Footer = () => {
                     </div>
                 </div>
 
+                {/* Bottom Section */}
                 <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-                    <p>
-                        &copy; 2025 Flash Car. All rights reserved.
-                    </p>
+                    <p>&copy; 2025 Flash Car. All rights reserved.</p>
                 </div>
             </div>
         </footer>

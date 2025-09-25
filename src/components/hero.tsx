@@ -144,7 +144,7 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                 observer.unobserve(currentRef);
             }
         };
-    }, [isIntersecting]);
+    }, [isIntersecting, setIsIntersecting]);
 
     return (
         <section

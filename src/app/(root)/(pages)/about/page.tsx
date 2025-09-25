@@ -3,7 +3,6 @@ import {
     Car,
     CheckCircle,
     Globe,
-    MapPin,
     Target,
     Users,
 } from "lucide-react";
