@@ -176,20 +176,18 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                 <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
                     {/* Left Content */}
                     <div
-                        className={`space-y-10 transition-all duration-1000 ${
-                            isVisible
+                        className={`space-y-10 transition-all duration-1000 ${isVisible
                                 ? "translate-x-0 opacity-100"
                                 : "-translate-x-10 opacity-0"
-                        }`}
+                            }`}
                     >
                         <div className="space-y-8">
                             {/* Enhanced Animated Badge */}
                             <div
-                                className={`inline-flex items-center bg-gradient-to-r from-amber-500/20 to-orange-500/20 px-4 py-2 rounded-full border border-amber-400/30 backdrop-blur-sm transition-all duration-700 delay-300 hover:from-amber-500/30 hover:to-orange-500/30 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25 ${
-                                    isVisible
+                                className={`inline-flex items-center bg-gradient-to-r from-amber-500/20 to-orange-500/20 px-4 py-2 rounded-full border border-amber-400/30 backdrop-blur-sm transition-all duration-700 delay-300 hover:from-amber-500/30 hover:to-orange-500/30 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/25 ${isVisible
                                         ? "translate-y-0 opacity-100"
                                         : "translate-y-4 opacity-0"
-                                }`}
+                                    }`}
                             >
                                 <Star className="h-4 w-4 text-amber-400 mr-3 animate-pulse" />
                                 <span className="font-semibold text-amber-100">
@@ -200,11 +198,10 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                             {/* Enhanced Main Heading */}
                             <div className="space-y-2">
                                 <h1
-                                    className={`text-6xl md:text-7xl font-black leading-none transition-all duration-1000 delay-500 ${
-                                        isVisible
+                                    className={`text-6xl md:text-7xl font-black leading-none transition-all duration-1000 delay-500 ${isVisible
                                             ? "translate-y-0 opacity-100"
                                             : "translate-y-8 opacity-0"
-                                    }`}
+                                        }`}
                                 >
                                     <span className="block">Premium</span>
                                     <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 animate-gradient">
@@ -215,11 +212,10 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                             </div>
 
                             <p
-                                className={`text-lg text-gray-300 leading-relaxed max-w-2xl transition-all duration-1000 delay-900 ${
-                                    isVisible
+                                className={`text-lg text-gray-300 leading-relaxed max-w-2xl transition-all duration-1000 delay-900 ${isVisible
                                         ? "translate-y-0 opacity-100"
                                         : "translate-y-6 opacity-0"
-                                }`}
+                                    }`}
                             >
                                 Flash Car delivers exceptional automotive
                                 services across Qatar, Dubai,Hong Kong and Saudi Arabia. From
@@ -231,11 +227,10 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
 
                         {/* Enhanced Action Buttons */}
                         <div
-                            className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-1100 ${
-                                isVisible
+                            className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-1100 ${isVisible
                                     ? "translate-y-0 opacity-100"
                                     : "translate-y-6 opacity-0"
-                            }`}
+                                }`}
                         >
                             <Link href="#services">
                                 <button className="group border-3 border-amber-400 text-amber-400 px-8 py-4 rounded-2xl font-bold text-xl hover:bg-amber-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center space-x-3 relative overflow-hidden">
@@ -250,11 +245,10 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
 
                         {/* Enhanced Feature Icons */}
                         <div
-                            className={`flex items-center space-x-16 pt-8 transition-all duration-1000 delay-1300 ${
-                                isVisible
+                            className={`flex items-center space-x-16 pt-8 transition-all duration-1000 delay-1300 ${isVisible
                                     ? "translate-y-0 opacity-100"
                                     : "translate-y-4 opacity-0"
-                            }`}
+                                }`}
                         >
                             <div className="flex items-center space-x-4 group cursor-pointer">
                                 <div className="p-3 bg-gradient-to-r from-amber-400/20 to-orange-400/20 rounded-xl group-hover:from-amber-400/30 group-hover:to-orange-400/30 transition-all duration-300 group-hover:scale-110">
@@ -277,29 +271,26 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
 
                     {/* Right Content - Realistic Car */}
                     <div
-                        className={`relative transition-all duration-1500 delay-600 ${
-                            isVisible
+                        className={`relative transition-all duration-1500 delay-600 ${isVisible
                                 ? "translate-x-0 opacity-100"
                                 : "translate-x-20 opacity-0"
-                        }`}
+                            }`}
                     >
                         {/* Cycling Service Display */}
                         <div
-                            className={`mt-8 transition-all duration-1000 delay-1500 ${
-                                isVisible
+                            className={`mt-8 transition-all duration-1000 delay-1500 ${isVisible
                                     ? "translate-y-0 opacity-100"
                                     : "translate-y-4 opacity-0"
-                            }`}
+                                }`}
                         >
                             <div className="h-16 flex items-center">
                                 {services.map((service, index) => (
                                     <div
                                         key={index}
-                                        className={`absolute transition-all duration-500 ${
-                                            currentService === index
+                                        className={`absolute transition-all duration-500 ${currentService === index
                                                 ? "opacity-100 scale-100 translate-y-0"
                                                 : "opacity-0 scale-75 translate-y-8"
-                                        }`}
+                                            }`}
                                     >
                                         <div className="flex items-center space-x-3">
                                             <CheckCircle
@@ -318,11 +309,10 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                 {services.map((_, index) => (
                                     <div
                                         key={index}
-                                        className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-                                            currentService === index
+                                        className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${currentService === index
                                                 ? "bg-amber-400 scale-125 shadow-lg shadow-amber-400/50"
                                                 : "bg-white/30 hover:bg-white/50"
-                                        }`}
+                                            }`}
                                     />
                                 ))}
                             </div>
@@ -336,21 +326,19 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
 
                                 {/* Main Car */}
                                 <div
-                                    className={`transition-all duration-1000 delay-1500 ${
-                                        isVisible
+                                    className={`transition-all duration-1000 delay-1500 ${isVisible
                                             ? "translate-y-0 opacity-100"
                                             : "translate-y-4 opacity-0"
-                                    }`}
+                                        }`}
                                 >
                                     <div className="w-[18em] h-[18em] flex items-center">
                                         {car_show.map((car, index) => (
                                             <div
                                                 key={index}
-                                                className={`absolute w-full h-auto transition-all duration-500 ${
-                                                    currentService === index
+                                                className={`absolute w-full h-auto transition-all duration-500 ${currentService === index
                                                         ? "opacity-100 scale-100 translate-y-0"
                                                         : "opacity-0 scale-75 translate-y-8"
-                                                }`}
+                                                    }`}
                                             >
                                                 {/* content */}
                                                 <Image
@@ -394,6 +382,46 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                     </div>
                                 </div>
                             </div>
+                            {/* Reach Out Section */}
+                            <div
+                                className={`mt-16 flex justify-center transition-all duration-1000 delay-1500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                                    }`}
+                            >
+                                <Link
+                                    href="https://share.google/f4e5qIjpTxgxYUepu"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 bg-gradient-to-r from-amber-400/20 to-orange-400/20 
+               px-6 py-3 rounded-2xl border border-amber-400/30 backdrop-blur-sm
+               hover:from-amber-400/30 hover:to-orange-400/30 hover:scale-105 
+               hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 group"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6 text-amber-400 group-hover:scale-110 transition-transform duration-300"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z"
+                                        />
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M12 22s8-4.5 8-11a8 8 0 10-16 0c0 6.5 8 11 8 11z"
+                                        />
+                                    </svg>
+                                    <span className="text-lg font-semibold text-white group-hover:text-amber-400">
+                                        Reach Out to Us
+                                    </span>
+                                </Link>
+                            </div>
+
                         </div>
                     </div>
                 </div>
