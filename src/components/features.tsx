@@ -5,7 +5,7 @@ const Features = () => {
     {
       icon: Clock,
       title: "Expert Service",
-      description: "30+ years of automotive excellence across Qatar, Dubai, and Dammam"
+      description: "30+ years of automotive excellence across Qatar, Dubai,Saudi Arabia, Hong Kong and India"
     },
     {
       icon: Shield,

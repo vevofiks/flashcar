@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import { LuFacebook } from "react-icons/lu";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Footer Grid */}
                 <div className="grid md:grid-cols-4 gap-8">
-                    
+
                     {/* Brand Section */}
                     <div className="space-y-4">
                         <div className="flex items-center">
@@ -84,7 +84,6 @@ const Footer = () => {
                             <p className="text-gray-400">Spare Parts</p>
                         </div>
                     </div>
-
                     {/* Social Links */}
                     <div className="space-y-4">
                         <h4 className="font-bold text-lg text-amber-400">
@@ -111,8 +110,19 @@ const Footer = () => {
                                     className="bg-amber-400 text-black p-1.5 rounded-full"
                                 />
                             </Link>
+                            <Link
+                                href="https://share.google/f4e5qIjpTxgxYUepu"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaMapMarkerAlt
+                                    size={34}
+                                    className="bg-amber-400 text-black p-1.5 rounded-full"
+                                />
+                            </Link>
                         </div>
                     </div>
+
                 </div>
 
                 {/* Bottom Section */}
