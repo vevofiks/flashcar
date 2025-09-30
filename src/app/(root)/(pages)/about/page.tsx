@@ -71,7 +71,7 @@ const About = () => {
                                         head office in Dubai for over 30 years
                                     </strong>{" "}
                                     and a strong operational base in
-                                    <strong> Dammam</strong>, we have built a
+                                    <strong> Saudi Arabia</strong>, we have built a
                                     solid reputation for trust, innovation, and
                                     quality in the automotive industry.
                                 </p>
@@ -349,7 +349,7 @@ const About = () => {
                             <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
                                 <FaRegFlag className="h-10 w-10" />
                             </div>
-                            <h3 className="text-2xl font-bold">Dubai</h3>
+                            <h3 className="text-2xl font-bold">UAE</h3>
                             <p className="text-amber-400 font-semibold">
                                 Sister Company
                             </p>
@@ -371,6 +371,21 @@ const About = () => {
                                 Support and innovation center
                             </p>
                         </div>
+
+                        {/* Hong kong */}
+                        <div className="text-center space-y-4 group">
+                            <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-all">
+                                <FaRegFlag className="h-10 w-10" />
+                            </div>
+                            <h3 className="text-2xl font-bold">Hong Kong</h3>
+                            <p className="text-amber-400 font-semibold">
+                                Sister Company
+                            </p>
+                            <p className="text-gray-400 text-sm">
+                                Established hub with decades of experience
+                            </p>
+                        </div>
+                        
                     </div>
                 </div>
             </section>

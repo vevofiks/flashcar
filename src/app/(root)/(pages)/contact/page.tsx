@@ -50,7 +50,7 @@ const Contact = () => {
         },
         {
             title: "Visit Our Locations",
-            primary: "Saudi Arabia • Qatar",
+            primary: "Saudi Arabia • Qatar • UAE • Hong Kong • India",
             secondary: "Multiple service centers",
         },
     ];

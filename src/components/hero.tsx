@@ -218,7 +218,7 @@ const Hero = ({ isIntersecting, setIsIntersecting }: IHero) => {
                                     }`}
                             >
                                 Flash Car delivers exceptional automotive
-                                services across Qatar, Dubai,Hong Kong and Saudi Arabia. From
+                                services across Qatar, UAE, Hong Kong and Saudi Arabia. From
                                 premium detailing to professional accessories
                                 installation, we&apos;re your trusted partner
                                 for luxury car care.

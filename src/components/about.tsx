@@ -28,7 +28,7 @@ const About = () => {
                         <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                             Under the umbrella of Riyadh Sky, Flash Car is
                             redefining automotive service excellence across
-                            Qatar, Dubai, and Dammam with three decades of
+                            Qatar, UAE, Hong Kong and Saudi Arabia with three decades of
                             proven expertise.
                         </p>
                     </div>
